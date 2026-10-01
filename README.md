@@ -16,7 +16,7 @@ The overview leads with the Glamsterdam findings for curious non-specialists, th
 
 All three describe evidence as of 30 September 2026. The Grok Build source has one privacy edit: its authenticated X account identifier is redacted. The report pages are generated directly from these files, and their downloadable Markdown is byte-identical to these maintained copies (including the Grok Build privacy edit). The home and methodology pages are editorial additions. Website preparation is not a fresh verification of Ethereum claims or historical provider execution.
 
-Privacy-reviewed publication copies of the research prompts are saved in `search-via-codex/codex-prompt.txt` and `search-via-grokbuild/grokbuild-prompt.txt`. Local output paths have been reduced to filenames and the directory-creation sentence removed. Neither supplied prompt contained a personal X handle. These are sanitized copies, not verbatim originals. The two copies differ only in two harness references and the destination filename. The Claude synthesis request and follow-up preferences are combined in `synthesis/claude-synthesis-prompt.txt`, edited for clarity and intent preservation rather than presented as verbatim. The synthesis model was reported as Claude Opus 5.5; an execution log was not available to independently verify this attribution. Raw provider responses, full transcripts, complete model settings and cost records are not present. Agreement between the two reports does not establish independent verification or a ranking of harnesses/models/providers.
+Privacy-reviewed publication copies of the research prompts are saved in `search-via-codex/codex-prompt.txt` and `search-via-grokbuild/grokbuild-prompt.txt`. Local output paths have been reduced to filenames and the directory-creation sentence removed. Neither supplied prompt contained a personal X handle. These are sanitized copies, not verbatim originals. The two copies differ only in two harness references and the destination filename. The Claude synthesis request and follow-up preferences are combined in `synthesis/claude-synthesis-prompt.txt`, edited for clarity and intent preservation rather than presented as verbatim. The synthesis model and harness were reported as Claude Opus 5.5 in Claude Code; an execution log was not available to independently verify this attribution. Raw provider responses, full transcripts, complete model settings and cost records are not present. Agreement between the two reports does not establish independent verification or a ranking of harnesses/models/providers.
 
 ## Reported run settings
 
@@ -26,7 +26,7 @@ The reported model and reasoning settings are listed below. Execution logs were 
 | --- | --- | --- |
 | Research / Codex | Sol 6.1 | Medium |
 | Research / Grok Build | Grok 4.7 | Medium |
-| Synthesis / Claude | Opus 5.5 | Medium |
+| Synthesis / Claude Code | Opus 5.5 | Medium |
 
 “Medium” does not establish equivalent reasoning effort across models. These runs demonstrate a workflow, not a controlled model ranking.
 

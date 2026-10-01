@@ -1,7 +1,7 @@
 <div class="page-intro"><p class="eyebrow">THE CASE STUDY / SEPARATING SEARCH FROM INTELLIGENCE</p><h1>Multiple providers filled gaps.<br><em>Their contributions also overlapped.</em></h1><p class="lead">Two assistants researched Glamsterdam. A third combined their findings into the guide you can read here.</p></div>
 <div class="prose method-prose">
 <p>This is a worked example of <a href="https://goolamabbas.github.io/separate-intelligence-and-search/">Choose your AI. Choose how it searches.</a> The idea is simple: choose the assistant that interprets information separately from the tools that retrieve its evidence. You can understand this case study without reading the companion guide first.</p>
-<p>The research brief asked Codex and Grok Build to investigate the practical impact of Ethereum’s Glamsterdam upgrade using Octen, Exa, Perplexity Search and authenticated X data. Claude then synthesized the two reports without new web research. <a href="index.html#key-takeaways">Start with the Glamsterdam takeaways</a> or <a href="synthesis.html">read the full synthesis</a>.</p>
+<p>The research brief asked Codex and Grok Build to investigate the practical impact of Ethereum’s Glamsterdam upgrade using Octen, Exa, Perplexity Search and authenticated X data. Claude Opus 5.5 in Claude Code then synthesized the two reports without new web research. <a href="index.html#key-takeaways">Start with the Glamsterdam takeaways</a> or <a href="synthesis.html">read the full synthesis</a>.</p>
 <nav class="case-nav" aria-label="Case study sections"><a href="#synthesis-value">What the synthesis added</a><a href="#provider-value">What each provider contributed</a><a href="#tradeoffs">Overlap and tradeoffs</a><a href="#run-settings">Models and settings</a><a href="#prompts">Prompts</a></nav>
 
 <h2 id="synthesis-value">Combining the reports retained detail and made disagreements visible.</h2>
@@ -11,7 +11,7 @@
 
 <h2 id="workflow">Providers retrieved evidence; assistants interpreted it in two stages.</h2>
 <p>A <strong>harness</strong> is the application coordinating the work. A <strong>model</strong> reasons and writes. A <strong>provider</strong> supplies search or retrieval. Keeping those roles separate makes the process easier to inspect.</p>
-<ol><li><strong>Retrieve and research.</strong> Each research harness used the four providers under substantially the same written brief. Search results and source content informed its own report.</li><li><strong>Synthesize within each harness.</strong> Sol 6.1 in Codex and Grok 4.7 in Grok Build interpreted the retrieved material and wrote separate accounts.</li><li><strong>Synthesize across harnesses.</strong> Claude Opus 5.5 compared those accounts, combined useful coverage and recorded disagreements.</li></ol>
+<ol><li><strong>Retrieve and research.</strong> Each research harness used the four providers under substantially the same written brief. Search results and source content informed its own report.</li><li><strong>Synthesize within each harness.</strong> Sol 6.1 in Codex and Grok 4.7 in Grok Build interpreted the retrieved material and wrote separate accounts.</li><li><strong>Synthesize across harnesses.</strong> Claude Opus 5.5 in Claude Code compared those accounts, combined useful coverage and recorded disagreements.</li></ol>
 <p>The provider roles in these runs concerned evidence retrieval. No Exa Agent or Perplexity Ask, Reason or Research narrative was adopted as a finding, according to the reports. Search and extraction may still use models internally. Different viewpoints came from sources and their interpretation, rather than four providers writing four competing opinions.</p>
 
 <h2 id="provider-value">The ledgers record complementary contributions, with shared ground.</h2>
@@ -37,7 +37,7 @@
 
 <h2 id="run-settings">The model settings describe the runs, not a controlled comparison.</h2>
 <p>The reported model and reasoning settings are listed below. Execution logs were not available to independently verify them.</p>
-<div class="table-wrap" role="region" aria-label="Reported harness and model settings" tabindex="0"><table><thead><tr><th>Step / harness</th><th>Model</th><th>Reasoning setting</th></tr></thead><tbody><tr><td>Research / Codex</td><td>Sol 6.1</td><td>Medium</td></tr><tr><td>Research / Grok Build</td><td>Grok 4.7</td><td>Medium</td></tr><tr><td>Synthesis / Claude</td><td>Opus 5.5</td><td>Medium</td></tr></tbody></table></div>
+<div class="table-wrap" role="region" aria-label="Reported harness and model settings" tabindex="0"><table><thead><tr><th>Step / harness</th><th>Model</th><th>Reasoning setting</th></tr></thead><tbody><tr><td>Research / Codex</td><td>Sol 6.1</td><td>Medium</td></tr><tr><td>Research / Grok Build</td><td>Grok 4.7</td><td>Medium</td></tr><tr><td>Synthesis / Claude Code</td><td>Opus 5.5</td><td>Medium</td></tr></tbody></table></div>
 <p>“Medium” is the selected setting, not evidence of equivalent reasoning effort across models. Harness behavior, available tools, retrieval results and execution choices also varied. The outputs cannot establish a model ranking.</p>
 
 <h2 id="original-reports">Inspect the reports and the decisions behind the synthesis.</h2>
@@ -45,7 +45,7 @@
 <p>The Grok Build report and its download have one privacy edit: the authenticated X account identifier is anonymized. Research findings and cited researchers’ public statements are unchanged.</p>
 
 <h2 id="prompts">The prompts show how retrieval and synthesis were assigned.</h2>
-<div class="source-links"><a href="codex-prompt.html"><strong>Research prompt / Codex</strong><span>Read or download the publication copy →</span></a><a href="grokbuild-prompt.html"><strong>Research prompt / Grok Build</strong><span>Read or download the publication copy →</span></a><a href="claude-prompt.html"><strong>Synthesis prompt / Claude</strong><span>Read the edited request and follow-up preferences →</span></a></div>
+<div class="source-links"><a href="codex-prompt.html"><strong>Research prompt / Codex</strong><span>Read or download the publication copy →</span></a><a href="grokbuild-prompt.html"><strong>Research prompt / Grok Build</strong><span>Read or download the publication copy →</span></a><a href="claude-prompt.html"><strong>Synthesis prompt / Claude Code</strong><span>Read the edited request and follow-up preferences →</span></a></div>
 <p>The two research prompts differ in three places: two references to “Codex” become “this harness,” and the destination filename changes. The question, provider roles, evidence rules and requested coverage are otherwise identical. Their publication copies replace local output paths with filenames and omit directory-creation wording.</p>
 <p>The Claude prompt is edited for grammar, structure and clarity, not presented as the literal wording used in the run. It preserves the request for full-depth synthesis without new web research, a one-page TL;DR, harness attribution confined to the differences section and anonymization of the requester’s X handle.</p>
 
