@@ -1,0 +1,32 @@
+Use the multi-provider-research skill.
+Use exactly Octen, Exa, Perplexity Search, and authenticated X data for research. Each must contribute a distinct evidence role. Inspect the currently callable tools and relevant schemas before starting; confirm actual provider use from completed results.
+Provider roles
+- Octen Broad Search: Conduct initial multi-angle discovery using one self-contained question preserving my intent, scope, and constraints within the current input limit. Let Octen generate the subqueries. Choose a proportionate query budget and use targeted Octen Search follow-ups for unresolved gaps rather than repeating Broad Search.
+- Exa: Use regular Search for semantic discovery of authoritative technical sources and independent cross-checking of important claims or gaps. Translate terse input into an intent-preserving description of the ideal sources. Use Advanced Search only when precise domain, date, category, freshness, text, or subpage controls are needed.
+- Perplexity Search: Use distinct targeted queries to discover missing primary sources, recent updates, or evidence challenging the emerging conclusions. Prefer search_type: "fast" for routine lookups when supported; choose "web" for difficult or ambiguous questions or material gaps left by Fast Search. Do not routinely run both.
+- X: Follow the x-api-defaults and xurl skills. Prefer authenticated xurl after checking xurl auth status; use the authenticated X API MCP instead when xurl is unavailable or its structured capabilities better fit the required search. Use one interface per evidence need. Search for relevant Ethereum researchers, EIP authors, client maintainers, and application developers. Read relevant thread context, preserve author identities, post dates, and direct links, and retrieve Article text when needed. Report search-window and access limits. Do not web-search or scrape X as a substitute for authenticated X data.
+Evidence and synthesis
+Retrieve source content and relevant excerpts; have Codex perform all analysis and final writing. Do not use Exa Agent or Connect, Perplexity Ask, Reason, or Research, or provider-generated summaries and answers.
+Reuse sufficient content already returned. Use Octen Extract or Exa Fetch for known web URLs or sources requiring fuller context, including Perplexity results and non-X links discovered on X. Leave Octen Extract’s query unset when the full body is needed. Do not add another provider or native search/page reader.
+Prefer official specifications, fork-scope records, repositories, client releases, testing records, and original developer discussions. Use X for attributed explanations, implementation concerns, and emerging discussion; corroborate material technical claims against specifications or other primary evidence. A post can establish what its author said, but does not by itself establish upgrade inclusion or measured performance.
+Check source dates. Distinguish proposals, confirmed inclusion, implementation progress, testing, and activation. Separate demonstrated results, design expectations, author claims, and Codex inference.
+Avoid duplicate successful searches or page reads unless independent verification materially strengthens the evidence. Cite inspected content supporting important claims. Explain conflicts and uncertainty.
+If a required provider is unavailable, disclose the blocked role, complete independent permitted work, and do not silently substitute another provider.
+Deliverable
+Save the complete, self-contained Markdown research report to:
+glamsterdam-codex-search.md
+Include the research question, research date, findings, inline source links, uncertainties, and a concise provider ledger recording exact interfaces, contributions, search windows, failures, and evidence gaps. Verify that the report was saved and return a clickable file link in chat.
+Research question: 
+As of the research date, what practical changes should Ethereum’s Glamsterdam upgrade bring to developers and end users?
+First verify the official upgrade name, current development stage, target timing, and latest agreed scope using authoritative Ethereum sources. Establish which EIPs are confirmed for inclusion, which remain candidates, and which have been deferred or excluded. Distinguish an EIP’s individual status from its inclusion in the upgrade.
+Then provide a detailed, accessible breakdown of every confirmed EIP, grouped by consensus layer and execution layer. For each, explain:
+- Its number, title, inclusion evidence, and implementation or testing status.
+- The problem it addresses and how its mechanism changes Ethereum’s behavior.
+- Practical effects for application and smart-contract developers, wallets, infrastructure providers, and node or validator operators.
+- What end users may experience, with concrete before-and-after examples where supported.
+- Whether benefits arrive directly at activation or require application adoption, infrastructure changes, or subsequent upgrades.
+- Compatibility issues, migration work, security considerations, and operational tradeoffs.
+- Any supported performance or cost estimates, including measurement conditions and limitations. Do not invent numerical improvements.
+Explain how the EIPs interact and which combined effects matter most. Distinguish effects on Ethereum mainnet from possible effects on rollups and their users. Do not assume that every improvement produces lower fees or faster transactions.
+Include a separate section for candidate EIPs and unresolved scope decisions. Use relevant X discussions to explain developer expectations and concerns, while verifying technical claims against primary sources.
+Start with a plain-language overview and an EIP comparison table, then provide the detailed analysis. Clearly separate confirmed facts, measured outcomes, expected benefits, and uncertain projections.

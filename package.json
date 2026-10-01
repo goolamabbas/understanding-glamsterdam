@@ -1,0 +1,12 @@
+{
+  "name": "understanding-glamsterdam",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node site/build.mjs",
+    "preview": "python3 -m http.server 8765 --bind 127.0.0.1 --directory _site"
+  },
+  "dependencies": {
+    "marked": "18.0.14"
+  }
+}

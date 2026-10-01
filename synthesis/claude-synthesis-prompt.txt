@@ -1,0 +1,27 @@
+Task
+Read the two research reports in the supplied subdirectories: one produced in Codex and the other in Grok Build. Each report was created using multiple research providers: Exa, Perplexity Search, Octen Broad Search and authenticated X data.
+
+Create a third document that brings together the strongest material from both reports into one coherent, full-depth synthesis.
+
+Approach
+- Read both reports in full.
+- Identify their shared findings and where they differ.
+- Combine overlapping material and retain useful details that appear in only one report.
+- Use your judgment to synthesize the two accounts and explain material disagreements.
+- Work only from the supplied documents. Do not search the internet. An exhaustive independent fact-check is not required.
+
+Output
+- Write the complete synthesis in Markdown.
+- Begin with a one-page TL;DR.
+- Follow it with the full-depth analysis.
+- Include a separate “Where the reports differ” section.
+- Confine attribution to the individual harnesses to that differences section. Present the rest as a unified account.
+
+Privacy
+The source reports may mention my personal X handle. Anonymize it wherever it appears in the synthesis.
+
+Before starting
+Confirm that you understand the request and ask any necessary clarifying questions. Otherwise, use reasonable defaults.
+
+Future use
+I intend to turn the synthesis into a website later. Creating the website is outside the scope of this request.

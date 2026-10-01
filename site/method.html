@@ -1,0 +1,60 @@
+<div class="page-intro"><p class="eyebrow">THE CASE STUDY / SEPARATING SEARCH FROM INTELLIGENCE</p><h1>Multiple providers filled gaps.<br><em>Their contributions also overlapped.</em></h1><p class="lead">Two assistants researched Glamsterdam. A third combined their findings into the guide you can read here.</p></div>
+<div class="prose method-prose">
+<p>This is a worked example of <a href="https://goolamabbas.github.io/separate-intelligence-and-search/">Choose your AI. Choose how it searches.</a> The idea is simple: choose the assistant that interprets information separately from the tools that retrieve its evidence. You can understand this case study without reading the companion guide first.</p>
+<p>Yusuf asked Codex and Grok Build to investigate the practical impact of Ethereum’s Glamsterdam upgrade using Octen, Exa, Perplexity Search and authenticated X data. Claude then synthesized the two reports without new web research. <a href="index.html#key-takeaways">Start with the Glamsterdam takeaways</a> or <a href="synthesis.html">read the full synthesis</a>.</p>
+<nav class="case-nav" aria-label="Case study sections"><a href="#synthesis-value">What the synthesis added</a><a href="#provider-value">What each provider contributed</a><a href="#tradeoffs">Overlap and tradeoffs</a><a href="#run-settings">Models and settings</a><a href="#prompts">Prompts</a></nav>
+
+<h2 id="synthesis-value">Combining the reports retained detail and made disagreements visible.</h2>
+<p>The synthesis did more than shorten two documents. It retained useful material from each and explained how differences were resolved. Two examples show the kind of judgment involved:</p>
+<ul><li><strong>ETH transfer logs: narrow the claim.</strong> Grok Build used the broad wording “Every ETH transfer emits a log.” Codex specified nonzero transfers between different accounts, with exclusions. Claude adopted the narrower scope and retained Grok Build’s additional detail about how the cost is accounted for.</li><li><strong>Gas constants: keep the qualification.</strong> Codex presented the current state-access gas table. Grok Build highlighted a statement in the companion specification that some constants were not final. Claude retained that caveat so the combined account did not imply more certainty than the inputs supported.</li></ul>
+<p>These are decisions documented in the <a href="synthesis.html#where-the-two-source-reports-differ">synthesis’s comparison section</a>. They illustrate editorial value from comparing the reports; the synthesis did not independently re-check the underlying sources.</p>
+
+<h2 id="workflow">Providers retrieved evidence; assistants interpreted it in two stages.</h2>
+<p>A <strong>harness</strong> is the application coordinating the work. A <strong>model</strong> reasons and writes. A <strong>provider</strong> supplies search or retrieval. Keeping those roles separate makes the process easier to inspect.</p>
+<ol><li><strong>Retrieve and research.</strong> Each research harness used the four providers under substantially the same written brief. Search results and source content informed its own report.</li><li><strong>Synthesize within each harness.</strong> Sol 6.1 in Codex and Grok 4.7 in Grok Build interpreted the retrieved material and wrote separate accounts.</li><li><strong>Synthesize across harnesses.</strong> Claude Opus 5.5 compared those accounts, combined useful coverage and recorded disagreements.</li></ol>
+<p>The provider roles in these runs concerned evidence retrieval. No Exa Agent or Perplexity Ask, Reason or Research narrative was adopted as a finding, according to the reports. Search and extraction may still use models internally. Different viewpoints came from sources and their interpretation, rather than four providers writing four competing opinions.</p>
+
+<h2 id="provider-value">The ledgers record complementary contributions, with shared ground.</h2>
+<p>This assessment uses the saved <a href="codex.html#provider-ledger-and-research-limits">Codex ledger</a> and <a href="grokbuild.html#provider-ledger">Grok Build ledger</a>. It describes what those reports record; raw tool responses were not supplied for a fresh execution audit.</p>
+<div class="table-wrap" role="region" aria-label="Provider contributions and overlap" tabindex="0"><table><thead><tr><th>Provider</th><th>Recorded contribution</th><th>Value and limits</th></tr></thead><tbody>
+<tr><td>Octen</td><td>Broad discovery, targeted searches and substantial full-text retrieval of specifications, scope records and releases.</td><td>A major retrieval role. In Codex, raw-source retrieval completed two EIP reads that Exa Fetch returned only as headings.</td></tr>
+<tr><td>Exa</td><td>Semantic discovery of authoritative sources and historical records; Codex also used Fetch for full specifications.</td><td>An alternative route for particular gaps. Codex pursued an exclusion/scope gap through Exa after an Octen search returned many irrelevant results. Headline sources overlapped.</td></tr>
+<tr><td>Perplexity Search</td><td>Targeted discovery of repricing guidance, devnet updates and removal or deferral discussions.</td><td>Useful gap-filling, but its unique contribution is harder to isolate: some documents also appeared through other providers, and fuller reads often used Octen.</td></tr>
+<tr><td>Authenticated X API</td><td>Original developer statements, implementation concerns and design discussions.</td><td>The clearest complementary evidence category alongside specifications. Posts establish what people said, not upgrade inclusion or measured performance by themselves.</td></tr>
+</tbody></table></div>
+
+<h3>Another retrieval route helped when the first was incomplete.</h3>
+<p>The Codex ledger records that Exa Fetch returned only headings for EIP-8045 and EIP-8061; Octen retrieval of raw sources completed those reads. It also records the reverse kind of assistance at discovery time: an Exa follow-up pursued a scope gap after an Octen search produced considerable noise. These are concrete examples of tools helping at different stages, rather than a general ranking of either provider.</p>
+
+<h3>Different search choices changed the evidence even within one provider.</h3>
+<p>Codex’s X searches reached earlier design debates; Grok Build’s emphasized recent announcements. The synthesis reports little overlap between the two samples. Different date windows, queries, result limits and follow-up choices broadened their combined coverage. Neither run exhausted X archive pagination. <a href="synthesis.html#differences-in-research-approach">Compare the recorded search approaches →</a></p>
+<p>Different indexes or rankings could also affect discovery, but these runs do not isolate those causes. We cannot attribute a result difference to an index alone.</p>
+
+<h2 id="tradeoffs">Overlap can support checking—or become unnecessary work.</h2>
+<p>Finding the same primary document through two services can help researchers locate and compare the relevant version. It does not create two independent sources for the same claim. Both research reports often relied on the same underlying Ethereum records.</p>
+<p>Some repetition was avoidable: Codex’s ledger explicitly records one unnecessary repeat read of the meta-EIP. Both runs also encountered stale or irrelevant results. Additional providers introduce more material to reconcile and can add service charges, latency and setup work. The records here do not quantify that overhead.</p>
+<p><strong>Were all four necessary?</strong> This case does not answer that. There was no comparable one-provider baseline, no complete accounting of which final claims depended uniquely on each provider, and no complete cost or timing record. The reports document useful contributions, but do not establish that four providers beat one—or that two would have been insufficient.</p>
+
+<h2 id="run-settings">The model settings describe the runs, not a controlled comparison.</h2>
+<p>Yusuf supplied the following settings. Execution logs were not provided.</p>
+<div class="table-wrap" role="region" aria-label="Reported harness and model settings" tabindex="0"><table><thead><tr><th>Step / harness</th><th>Model</th><th>Reasoning setting</th></tr></thead><tbody><tr><td>Research / Codex</td><td>Sol 6.1</td><td>Medium</td></tr><tr><td>Research / Grok Build</td><td>Grok 4.7</td><td>Medium</td></tr><tr><td>Synthesis / Claude</td><td>Opus 5.5</td><td>Medium</td></tr></tbody></table></div>
+<p>“Medium” is the selected setting, not evidence of equivalent reasoning effort across models. Harness behavior, available tools, retrieval results and execution choices also varied. The outputs cannot establish a model ranking.</p>
+
+<h2 id="original-reports">Inspect the reports and the decisions behind the synthesis.</h2>
+<div class="source-links"><a href="synthesis.html"><strong>Claude synthesis</strong><span>Read the combined account and its limitations →</span></a><a href="codex.html"><strong>Codex research</strong><span>Read the report and provider ledger →</span></a><a href="grokbuild.html"><strong>Grok Build research</strong><span>Read the report and provider ledger →</span></a></div>
+<p>The Grok Build report and its download have one privacy edit: the authenticated X account identifier is anonymized. Research findings and cited researchers’ public statements are unchanged.</p>
+
+<h2 id="prompts">The prompts show how retrieval and synthesis were assigned.</h2>
+<div class="source-links"><a href="codex-prompt.html"><strong>Research prompt / Codex</strong><span>Read or download the publication copy →</span></a><a href="grokbuild-prompt.html"><strong>Research prompt / Grok Build</strong><span>Read or download the publication copy →</span></a><a href="claude-prompt.html"><strong>Synthesis prompt / Claude</strong><span>Read the edited request and follow-up preferences →</span></a></div>
+<p>The two research prompts differ in three places: two references to “Codex” become “this harness,” and the destination filename changes. The question, provider roles, evidence rules and requested coverage are otherwise identical. Their publication copies replace local output paths with filenames and omit directory-creation wording.</p>
+<p>The Claude prompt is edited for grammar, structure and clarity, not presented as the literal wording used in the run. It preserves the request for full-depth synthesis without new web research, a one-page TL;DR, harness attribution confined to the differences section and anonymization of the requester’s X handle.</p>
+
+<h2 id="limits">This case demonstrates a workflow and preserves its evidence limits.</h2>
+<p>The reports and synthesis reflect a 30 September 2026 snapshot. Agreement does not establish independent verification. Benchmarks, chain replays and client tests were not reproduced; source conflicts and incomplete retrievals remain documented in the <a href="synthesis.html#method-and-limits">research limits</a>. Raw tool responses, full execution transcripts, complete model settings and cost records are absent from this collection.</p>
+<p>This website adds an introductory reading route and an assessment of the recorded workflow. It does not refresh the Ethereum research or certify that the original tool calls executed as described.</p>
+
+<h2 id="try-it">Start with one provider. Add another to fill a specific gap.</h2>
+<p>The <code>multi-provider-research</code> skill can work with one suitable provider. Add a second when you need a different source category, an unresolved search angle or a way around incomplete retrieval. Judge it by the usable evidence it adds. If it repeatedly returns the same material without resolving a gap, more calls may not help.</p>
+<p>The companion guide explains provider setup and skill installation. Assistant subscriptions and provider access are separate choices; you do not need to reproduce this four-provider setup to try the approach.</p>
+<p><a class="button" href="https://goolamabbas.github.io/separate-intelligence-and-search/">Choose your AI. Choose how it searches. →</a></p>
+</div>

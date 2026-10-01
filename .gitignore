@@ -1,0 +1,33 @@
+# Publication allowlist. New research dumps remain local by default.
+/*
+!/.gitignore
+!/README.md
+!/package.json
+!/package-lock.json
+!/site/
+/site/*
+!/site/build.mjs
+!/site/styles.css
+!/site/home.html
+!/site/method.html
+!/site/favicon.svg
+!/synthesis/
+/synthesis/*
+!/synthesis/glamsterdam-synthesis.md
+!/synthesis/claude-synthesis-prompt.txt
+!/search-via-codex/
+/search-via-codex/*
+!/search-via-codex/glamsterdam-codex-search.md
+!/search-via-codex/codex-prompt.txt
+!/search-via-grokbuild/
+/search-via-grokbuild/*
+!/search-via-grokbuild/glamsterdam-grokbuild-search.md
+!/search-via-grokbuild/grokbuild-prompt.txt
+# _site/, node_modules/, review/, raw outputs and local notes stay ignored.
+# Add future prompts explicitly after checking their publication scope.
+
+!/.github/
+/.github/*
+!/.github/workflows/
+/.github/workflows/*
+!/.github/workflows/pages.yml
